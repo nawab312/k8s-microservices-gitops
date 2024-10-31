@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17-jdk-jammy AS build
 WORKDIR /app
-COPY k8s-microservices-gitops/spring-petclinic/.mvn/ .mvn
-COPY k8s-microservices-gitops/spring-petclinic/mvnw spring-petclinic/pom.xml ./
+COPY spring-petclinic/.mvn/ .mvn
+COPY spring-petclinic/mvnw spring-petclinic/pom.xml ./
 RUN ./mvnw dependency:resolve
 COPY spring-petclinic/src ./src
 
