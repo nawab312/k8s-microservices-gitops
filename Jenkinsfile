@@ -11,6 +11,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/nawab312/k8s-microservices-gitops.git'
+                sh 'git submodule update --init --recursive'
             }
         }
         stage('Build Image') {
